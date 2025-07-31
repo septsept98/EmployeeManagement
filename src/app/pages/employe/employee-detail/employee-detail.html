@@ -1,0 +1,19 @@
+<div *ngIf="employee" class="card">
+    <div class="card-header">
+        
+  <h4>Detail Pegawai</h4>
+    </div>
+    <div class="card-body">
+  <p><strong>Username:</strong> {{ employee.username }}</p>
+  <p><strong>Nama:</strong> {{ employee.firstName }} {{ employee.lastName }}</p>
+  <p><strong>Email:</strong> {{ employee.email }}</p>
+  <p><strong>Tanggal Lahir:</strong> {{ employee.birthDate | date:'dd MMMM yyyy' }}</p>
+  <p><strong>Gaji:</strong> {{ formatRupiah(employee.basicSalary) }}</p>
+  <p><strong>Status:</strong> {{ employee.status }}</p>
+  <p><strong>Group:</strong> {{ employee.group }}</p>
+  <p><strong>Description:</strong> {{ employee.description | date:'dd MMMM yyyy' }}</p>
+</div>
+<div class="card-footer">
+  <button class="btn btn-success" (click)="goBack()">OK</button>
+  </div>
+</div>

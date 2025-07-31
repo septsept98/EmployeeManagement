@@ -1,0 +1,46 @@
+body {
+      background-color: #f4f6f9;
+      margin: 0;
+    }
+
+    .sidebar {
+      min-height: 100vh;
+      background-color: #fff;
+      border-right: 1px solid #ddd;
+    }
+
+    .sidebar .nav-link {
+      color: #000;
+      font-weight: 500;
+    }
+
+    .sidebar .nav-link.active {
+      background-color: #f0dc74;
+    }
+
+    .topbar {
+      background-color: #174f7a;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      height: 60px;
+    }
+
+    .topbar .brand {
+      font-weight: bold;
+    }
+
+    .content {
+      padding: 1.5rem;
+    }
+
+    .table th {
+      vertical-align: middle;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        display: none;
+      }
+    }

@@ -1,0 +1,29 @@
+<div class="topbar d-flex justify-content-between align-items-center px-4">
+  <div class="brand">Manage</div>
+  <div>
+    <button class="btn btn-sm btn-outline-light" (click)="onLogoutClick()">
+        Logout
+      </button>
+  </div>
+</div>
+
+<div class="d-flex">
+  <div class="sidebar p-3 d-none d-md-block">
+    <div class="text-center mb-3">
+      <p class="mt-2 mb-0 fw-bold">super admin</p>
+      <small class="text-muted">Welcome</small>
+    </div>
+    <nav class="nav flex-column">
+      <a class="nav-link active" href="/management/employee">Employee</a>
+    </nav>
+  </div>
+
+  <!-- Main content -->
+  <div class="flex-grow-1">
+    <div class="content">
+      <div class="card">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>

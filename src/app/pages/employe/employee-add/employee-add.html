@@ -1,0 +1,77 @@
+
+  <div class="card">
+    <div class="card-header">
+      <h4>Tambah Customer</h4>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label>Username</label>
+            <input type="text" class="form-control" formControlName="username">
+            <div class="text-danger" *ngIf="employeeForm.get('username')?.touched && employeeForm.get('username')?.invalid">
+              Username wajib diisi.
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label>First Name</label>
+            <input type="text" class="form-control" formControlName="firstName">
+            <div class="text-danger" *ngIf="employeeForm.get('firstName')?.touched && employeeForm.get('firstName')?.invalid">
+              First name wajib diisi.
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label>Last Name</label>
+            <input type="text" class="form-control" formControlName="lastName">
+            <div class="text-danger" *ngIf="employeeForm.get('lastName')?.touched && employeeForm.get('lastName')?.invalid">
+              Last name wajib diisi.
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label>Email</label>
+            <input type="email" class="form-control" formControlName="email">
+            <div class="text-danger" *ngIf="employeeForm.get('email')?.touched && employeeForm.get('email')?.invalid">
+              Email tidak valid.
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label>Tanggal Lahir</label>
+            <input type="date" class="form-control" formControlName="birthDate" [max]="today">
+            <div class="text-danger" *ngIf="employeeForm.get('birthDate')?.touched && employeeForm.get('birthDate')?.invalid">
+              Tanggal tidak boleh lebih dari hari ini.
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label>Gaji Pokok</label>
+            <input type="number" class="form-control" formControlName="basicSalary">
+            <div class="text-danger" *ngIf="employeeForm.get('basicSalary')?.touched && employeeForm.get('basicSalary')?.invalid">
+              Gaji harus diisi dan lebih dari 0.
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label>Status</label>
+            <select class="form-select" formControlName="status">
+              <option value="Aktif">Aktif</option>
+              <option value="Nonaktif">Nonaktif</option>
+            </select>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label>Group</label>
+            <select class="form-select" formControlName="group">
+              <option *ngFor="let g of groups" [value]="g">{{ g }}</option>
+            </select>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label>Description</label>
+            <input type="date" class="form-control" formControlName="description">
+            <div class="text-danger" *ngIf="employeeForm.get('description')?.touched && employeeForm.get('description')?.invalid">
+              Tanggal wajib diisi.
+            </div>
+          </div>
+        </div>
+
+        <button class="btn btn-success mt-2" type="submit">Simpan</button>
+        <button class="btn btn-secondary mt-2 ms-2" routerLink="/management/employee">Batal</button>
+      </form>
+    </div>
+  </div>
