@@ -7,5 +7,5 @@ untuk menjalankan :
 3. jalankan projek angular ketik `ng serve` pada console
 
 Auth Login :
-Username : admin
-Password : admin123
+Username : admin \
+Password : admin123 \
